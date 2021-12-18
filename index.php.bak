@@ -14,7 +14,7 @@ while (!feof($messages)){
 
 
 $people = json_decode(file_get_contents("people.json"), true);
-if(isset($_POST["person"]) && $question != ''){
+if(isset($_POST["person"])){
 	$en_name = $_POST["person"];
 	$question=$_POST["question"];
 	$msg = $messages2[intval(hash('md5', $question.$en_name))%16]; 
